@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shayna - Cumpleaños 22 + Estreno Musical</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Música de fondo -->
+    <audio id="musicaFondo" src="imagenes/shayna-cancion.mp3" loop></audio>
+    <button class="boton-musica" id="toggleMusica">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <div class="contenedor-contenido">
+
+        <!-- Bienvenida -->
+        <section id="bienvenida" class="seccion centrado">
+            <h1>¡Cumplo 22!</h1>
+            <p>Y quiero que estés presente en un momento único... <br><strong>¡El estreno de mi nueva canción!</strong></p>
+            <h2 class="nombre">Shayna</h2>
+            <p class="fecha">22 de mayo de 2025</p>
+            <button class="boton-latido" onclick="irASeccion('contador')">Viví esta experiencia</button>
+        </section>
+
+        <!-- Cuenta regresiva -->
+        <section id="contador" class="seccion contador-contenedor">
+            <h2>Faltan...</h2>
+            <div class="circulo-fondo">
+                <img src="imagenes/icono-disco.jpg" alt="Disco girando" class="disco-girando">
+                <div class="contador-circular">
+                    <div><span id="dias">00</span><small>Días</small></div>
+                    <div><span id="horas">00</span><small>Horas</small></div>
+                    <div><span id="minutos">00</span><small>Minutos</small></div>
+                    <div><span id="segundos">00</span><small>Segundos</small></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información -->
+        <section class="seccion info-celebracion">
+            <img src="imagenes/ICONO-CELEBRACION.png" alt="Celebración" class="icono-celebracion">
+            <div class="bloque-info">
+                <h3>Día</h3>
+                <p>Sábado 15 de Junio - 17hs</p>
+            </div>
+            <div class="bloque-info">
+                <h3>Lugar</h3>
+                <p>Salón Aurora</p>
+                <a href="#" class="boton-confirmar" onclick="abrirModal(); return false;">Confirmar asistencia</a>
+            </div>
+            <div class="bloque-info">
+                <h3>Dirección</h3>
+                <p>Montevideo, Uruguay</p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Salón+Aurora,+Montevideo"
+                    class="boton-direccion" target="_blank">¿Cómo llegar?</a>
+            </div>
+        </section>
+
+        <!-- Modal de confirmación -->
+        <div id="modalConfirmacion" class="modal">
+            <div class="modal-contenido">
+                <button class="cerrar-modal" onclick="cerrarModal()">×</button>
+                <div class="icono-formulario">
+                    <img src="imagenes/icono-musica.jpg" alt="Celebración">
+                </div>
+                <h2>¿Asistís al evento?</h2>
+                <form id="formAsistencia">
+                    <div class="radio-group">
+                        <label><input type="radio" name="asiste" value="sí" required> ¡Sí, confirmo!</label>
+                        <label><input type="radio" name="asiste" value="no"> No puedo :(</label>
+                    </div>
+                    <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+                    <input type="text" name="extra" placeholder="Dato extra. Ej: Soy vegetariano">
+                    <button type="submit" class="boton-enviar">Enviar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Fiesta y detalles -->
+        <section class="seccion info-extra">
+            <h2>Celebración + Lanzamiento</h2>
+            <p class="descripcion-fiesta">Vamos a celebrar mis 22 años y el estreno de mi nueva canción. Una noche mágica, con música, emoción y mucha energía.</p>
+            <div class="tarjetas-contenedor">
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-invitacion">
+        <div class="footer-texto">
+            <p>Con todo mi cariño, <strong>Shayna 🎤</strong></p>
+            <small>&copy; 2025 - Sitio creado por
+                <a href="https://www.instagram.com/rodrigo_brun" target="_blank" class="footer-link">@Rodrigo Brun</a>
+            </small>
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a class="boton-whatsapp" href="https://wa.me/59891123456" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+</body>
+
+</html>

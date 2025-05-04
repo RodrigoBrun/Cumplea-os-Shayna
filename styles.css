@@ -1,0 +1,398 @@
+/* 🎨 PALETA PRADERA CÁLIDO */
+:root {
+    --color-fondo: #fffaf4;
+    --color-principal: #d99a6c;
+    --color-secundario: #6e3f2b;
+    --color-texto: #3d2b1f;
+    --color-rosado: #e9c8b7;
+    --color-hover: #f5e3c5;
+  }
+  
+  /* 🌄 ESTILOS BASE DEL BODY */
+  body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-fondo);
+    background-image: url('imagenes/FONDO-DODY.png');
+    background-size: cover;
+    background-attachment: scroll;
+    scroll-behavior: smooth;
+  }
+  
+  /* 🧊 CONTENEDOR PRINCIPAL */
+  .contenedor-contenido {
+    background-color: transparent; /* fondo eliminado */
+    backdrop-filter: none; /* sin desenfoque */
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: none;
+  }
+  
+  /* 🧱 SECCIONES GENÉRICAS */
+  .seccion {
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 100px; /* 👈 agrega espacio entre secciones */
+  }
+  
+  /* 📝 TÍTULOS */
+  h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-secundario);
+    margin-bottom: 10px;
+  }
+  
+  h1 { font-size: 48px; }
+  h2 { font-size: 38px; }
+  
+  .nombre {
+    font-size: 50px;
+    color: var(--color-principal);
+  }
+  
+  .fecha {
+    font-size: 20px;
+    color: var(--color-texto);
+  }
+  
+  /* 🔘 BOTONES GENERALES */
+  button,
+  .boton-confirmar,
+  .boton-direccion,
+  .boton-enviar {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  button:hover,
+  .boton-confirmar:hover,
+  .boton-direccion:hover,
+  .boton-enviar:hover {
+    background-color: var(--color-secundario);
+  }
+  
+  /* 🎵 BOTÓN MÚSICA */
+  .boton-musica {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--color-secundario);
+    color: white;
+    font-size: 22px;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 💬 BOTÓN WHATSAPP */
+  .boton-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    font-size: 24px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ⏳ SECCIÓN CONTADOR */
+  .contador-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .circulo-fondo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    box-shadow: none;
+  }
+  
+  .flores-fondo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.4;
+  }
+  
+  .contador-circular {
+    display: flex;
+    gap: 10px;
+    z-index: 1;
+    background: none;
+  }
+  
+  .contador-circular div {
+    background: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: var(--color-texto);
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .contador-circular span {
+    font-size: 54px;
+    display: block;
+  }
+  
+  .contador-circular small {
+    font-size: 25px;
+    color: #555;
+  }
+  
+  /* 💿 DISCO GIRANDO */
+  .disco-girando {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    opacity: 0.25;
+    animation: girarDisco 15s linear infinite;
+    z-index: 0;
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.1));
+  }
+  
+  @keyframes girarDisco {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  
+  /* 🎉 INFO CELEBRACIÓN */
+  .info-celebracion {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 40px 20px;
+    margin-top: 40px;
+  }
+  
+  .icono-celebracion {
+    width: 160px;
+    margin-bottom: 20px;
+  }
+  
+  .bloque-info {
+    margin-bottom: 30px;
+  }
+  
+  .bloque-info h3 {
+    color: var(--color-secundario);
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  
+  .bloque-info p {
+    color: var(--color-texto);
+    font-weight: bold;
+  }
+  
+  /* 🖼️ GALERÍA */
+  .galeria-carrusel {
+    padding: 50px 20px;
+    background: rgba(255, 249, 240, 0.5);
+  }
+  
+  .titulo-galeria {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--color-texto);
+  }
+  
+  .subtitulo-galeria {
+    color: var(--color-secundario);
+  }
+  
+  .carrusel-outer {
+    overflow-x: auto;
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .polaroid {
+    background-color: white;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 180px;
+    max-width: 180px;
+    flex-shrink: 0;
+  }
+  
+  .polaroid img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  /* 📍 FOOTER */
+  .footer-invitacion {
+    background-color: rgba(255, 249, 240, 0.8);
+    color: var(--color-secundario);
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 15px;
+  }
+  
+  .footer-invitacion a {
+    color: var(--color-principal);
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .footer-invitacion a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 💓 ANIMACIÓN LATIDO */
+  @keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  .boton-latido {
+    animation: latido 2s infinite ease-in-out;
+  }
+  
+
+
+  .modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .modal-contenido {
+    background: #fffaf4; /* fondo crema suave */
+    border-radius: 25px;
+    padding: 40px 20px 30px 20px;
+    width: 90%;
+    max-width: 420px;
+    margin: 0 15px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .icono-formulario img {
+    width: 70px;
+    margin-top: -60px;
+    margin-bottom: 20px;
+  }
+  
+  .cerrar-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #6e3f2b;         /* color-secundario */
+    color: white;
+    font-size: 20px;
+    border: 2px solid white;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+  
+  .cerrar-modal:hover {
+    background: #d99a6c; /* color-principal */
+  }
+  
+  .radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .modal input[type="text"] {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #d99a6c; /* borde color-principal */
+    background: transparent;
+  }
+  
+  .boton-enviar {
+    background-color: #d99a6c; /* color-principal */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+  
+  .icono-formulario {
+    background-color: #fffaf4; /* color-fondo */
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 2;
+    border: 2px solid #d99a6c; /* color-principal */
+  }
+  
+  .icono-formulario img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+  }
+  
