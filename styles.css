@@ -17,7 +17,14 @@
     background-size: cover;
     background-attachment: scroll;
     scroll-behavior: smooth;
+  
+    /* 💡 Centramos contenido */
+    display: flex; /* 🔹 Esto faltaba */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Esto asegura que el contenido fluya en columna */
   }
+  
   
   /* 🧊 CONTENEDOR PRINCIPAL */
   .contenedor-contenido {
@@ -170,20 +177,20 @@
   }
   
   .contador-circular span {
-    font-size: 54px;
+    font-size: 44px;
     display: block;
   }
   
   .contador-circular small {
-    font-size: 25px;
+    font-size: 14px;
     color: #555;
   }
   
   /* 💿 DISCO GIRANDO */
   .disco-girando {
     position: absolute;
-    width: 600px;
-    height: 600px;
+    width: 450px;
+    height: 450px;
     opacity: 0.25;
     animation: girarDisco 15s linear infinite;
     z-index: 0;
