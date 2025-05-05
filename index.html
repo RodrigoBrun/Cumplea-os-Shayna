@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shayna - Cumpleaños 22 + Estreno Musical</title>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
 </head>
 
 <body>
+  <!-- Fondo oscuro al abrir -->
+  <div class="overlay"></div>
 
-  <div class="contenido">
+  <!-- SOBRE -->
+  <div class="sobre-container" id="sobreContainer">
+    <img src="imagenes/sobre.png" alt="Sobre cerrado" class="sobre" id="sobre">
+  </div>
 
-    <!-- 🎵 Música de fondo -->
+  <!-- CONTENIDO OCULTO HASTA QUE SE ABRA EL SOBRE -->
+  <div class="contenido" id="contenido">
+
     <audio id="musicaFondo" src="imagenes/Vos y yo_streaming master.wav" loop></audio>
     <button class="boton-musica" id="toggleMusica">
       <i class="fas fa-music"></i>
     </button>
 
-    <!-- 👋 Bienvenida -->
     <section id="bienvenida" class="seccion centrado">
       <h1>¡Cumplo 22!</h1>
       <p class="texto-bienvenida">Quiero que estés presente en un momento único...<br>
@@ -39,9 +38,7 @@
       <p class="fecha">22 de mayo de 2025</p>
       <button class="boton-latido" onclick="irASeccion('contador')">Estreno de mi canción</button>
     </section>
-    
 
-    <!-- ⏳ Cuenta regresiva -->
     <section id="contador" class="seccion contador-contenedor">
       <h2>Faltan...</h2><br><br>
       <div class="circulo-fondo">
@@ -55,7 +52,6 @@
       </div>
     </section>
 
-    <!-- 🎉 Info celebración -->
     <section class="seccion info-celebracion">
       <img src="imagenes/ICONO-CELEBRACION.png" alt="Celebración" class="icono-celebracion">
       <div class="bloque-info">
@@ -64,7 +60,7 @@
       </div>
       <div class="bloque-info">
         <h3>Lugar</h3>
-        <p>Nombre del salon</p>
+        <p>Nombre del salón</p>
         <a href="#" class="boton-confirmar" onclick="abrirModal(); return false;">Confirmar asistencia</a>
       </div>
       <div class="bloque-info">
@@ -75,7 +71,7 @@
       </div>
     </section>
 
-    <!-- 💌 Modal de confirmación -->
+    <!-- Modal -->
     <div id="modalConfirmacion" class="modal">
       <div class="modal-contenido">
         <button class="cerrar-modal" onclick="cerrarModal()">×</button>
@@ -95,18 +91,14 @@
       </div>
     </div>
 
-    <!-- 💫 Fiesta -->
+    <!-- Extra -->
     <section class="seccion info-extra">
       <h2>Celebración + Lanzamiento</h2>
       <p class="descripcion-fiesta">Vamos a celebrar mis 22 años y el estreno de mi nueva canción. Una noche mágica, con música, emoción y mucha energía.</p>
-      <div class="tarjetas-contenedor">
-        <!-- Tarjetas o detalles extra -->
-      </div>
+      <div class="tarjetas-contenedor"></div>
     </section>
+  </div>
 
-  </div> <!-- ⬅️ Cierra el div .contenido -->
-
-  <!-- 📍 Footer por fuera -->
   <footer class="footer-invitacion">
     <div class="footer-texto">
       <p>Con todo mi cariño, <strong>Shayna 🎤</strong></p>
@@ -116,10 +108,12 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <audio id="audioSobre">
+    <source src="imagenes/polvo-de-adas.mp3" type="audio/mp3" />
+  </audio>
+
   <script src="scripts.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
-
 </body>
 </html>
