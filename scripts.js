@@ -146,3 +146,26 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('section, header, footer').forEach(e => e.style.display = '');
   }
   
+
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sobre = document.getElementById("sobre");
+    const container = document.getElementById("sobreContainer");
+    const contenido = document.getElementById("contenido");
+    const audio = document.getElementById("audioSobre");
+  
+    if (sobre) {
+      sobre.addEventListener("click", () => {
+        // Reproduce sonido mágico
+        audio.play().catch((e) => console.log("Error al reproducir audio", e));
+  
+        // Oculta el sobre y muestra el contenido
+        document.body.classList.add("abierto");
+        container.style.display = "none";
+        contenido.style.display = "block";
+      });
+    }
+  });
+  
