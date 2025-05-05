@@ -12,10 +12,7 @@
   body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    background-color: var(--color-fondo);
     scroll-behavior: smooth;
-  
-    /* Centramos el contenido */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,6 +20,9 @@
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
+  
+    /* 🔥 esto elimina el color blanco que tapaba tu imagen */
+    background-color: transparent;
   }
   
   /* Fondo real usando ::before */
@@ -33,7 +33,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('imagenes/fondo-flores-cuadros.png') no-repeat center center;
+    background: url('imagenes/fondo-floral.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: scroll; /* ✅ evita efecto de zoom en móviles */
     z-index: -1;
@@ -41,7 +41,6 @@
     will-change: transform;
     transform: translateZ(0);
   }
-  
   
   
   
@@ -74,7 +73,7 @@
   /* 📝 TÍTULOS */
   h1, h2 {
     font-family: 'Playfair Display', serif;
-    color: rgba(255, 255, 255, 0.9);;
+    color: #d99a6c;
     margin-bottom: 10px;
   }
   
@@ -88,7 +87,7 @@
   
   .fecha {
     font-size: 20px;
-    color: rgba(255, 255, 255, 0.9);;
+    color: #d99a6c;
   }
   
   /* 🔘 BOTONES GENERALES */
@@ -158,7 +157,7 @@
   }
 
   .texto-bienvenida {
-    color: #f5e3c5; /* tono crema claro o el que quieras */
+    color: #d99a6c; /* tono crema claro o el que quieras */
     font-size: 18px;
   }
   
@@ -458,3 +457,60 @@
 
 
   
+
+
+
+  /* === SOBRE === */
+  .sobre-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 10;
+    background: url('imagenes/fondo-floral.jpg') center center no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+
+.sobre {
+  width: 300px;
+  cursor: pointer;
+  animation: vibrar 2s infinite;
+}
+
+@keyframes vibrar {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Oculta contenido al inicio */
+body:not(.abierto) .contenido {
+  display: none;
+}
+
+/* Fondo oscuro al abrir */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+body.abierto .overlay {
+  opacity: 1;
+}
+
+body:not(.abierto) .footer-invitacion {
+  display: none;
+}
+
+
+
