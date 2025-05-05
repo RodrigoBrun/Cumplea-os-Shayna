@@ -33,7 +33,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('imagenes/Fondo-flores.jpg') no-repeat center center;
+    background: url('imagenes/fondo-flores-cuadros.png') no-repeat center center;
     background-size: cover;
     background-attachment: scroll; /* ✅ evita efecto de zoom en móviles */
     z-index: -1;
@@ -41,6 +41,7 @@
     will-change: transform;
     transform: translateZ(0);
   }
+  
   
   
   
