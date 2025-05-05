@@ -28,13 +28,14 @@
   
   /* 🧊 CONTENEDOR PRINCIPAL */
   .contenedor-contenido {
-    background-color: transparent; /* fondo eliminado */
-    backdrop-filter: none; /* sin desenfoque */
-    max-width: 600px;
+    background-color: rgba(255, 249, 247, 0.2);
+    backdrop-filter: blur(3px);
+    min-height: 100vh;
+    border-radius: 12px;
     margin: auto;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: none;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
   
   /* 🧱 SECCIONES GENÉRICAS */
@@ -211,8 +212,9 @@
   }
   
   .icono-celebracion {
-    width: 160px;
-    margin-bottom: 20px;
+    width: 260px;
+    margin-bottom: -80px;
+    margin-top: -80px;
   }
   
   .bloque-info {
@@ -275,6 +277,10 @@
     padding: 40px 20px;
     text-align: center;
     font-size: 15px;
+  
+    width: 100vw;              /* ✅ Ocupa todo el ancho de la ventana */
+    margin: 0;                 /* ✅ Elimina márgenes */
+    box-sizing: border-box;   /* ✅ Asegura que el padding no lo desborde */
   }
   
   .footer-invitacion a {
