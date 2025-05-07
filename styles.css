@@ -1,13 +1,16 @@
-/* 🎨 PALETA PRADERA CÁLIDO */
+/* 🎨 PALETA VERDE + TERRACOTA */
 :root {
-    --color-fondo: #fffaf4;
-    --color-principal: #d99a6c;
-    --color-secundario: #6e3f2b;
-    --color-texto: #3d2b1f;
-    --color-rosado: #e9c8b7;
-    --color-hover: #f5e3c5;
-  }
-  
+  --color-fondo: #f8f5f0;         /* Fondo claro, neutro */
+  --color-principal: #a05035;     /* Terracota cálido */
+  --color-secundario: #5b6141;    /* Verde oliva profundo */
+  --color-texto: #2f2f2f;         /* Texto en gris oscuro neutro */
+  --color-acento: #d97b4d;        /* Terracota más brillante para botones */
+  --color-hover: #e6c9b0;         /* Color de hover suave tipo beige rosado */
+  --color-detalle-verde: #7a8354;   /* Verde hoja para detalles secundarios */
+  --color-detalle-terracota: #bf6240; /* Terracota más oscuro para contrastes */
+
+}
+
   /* 🌄 ESTILOS BASE DEL BODY */
   body {
     margin: 0;
@@ -73,7 +76,7 @@
   /* 📝 TÍTULOS */
   h1, h2 {
     font-family: 'Playfair Display', serif;
-    color: #d99a6c;
+    color: var(--color-secundario);
     margin-bottom: 10px;
   }
   
@@ -87,15 +90,33 @@
   
   .fecha {
     font-size: 20px;
-    color: #d99a6c;
+    color: var(--color-secundario);
   }
   
+
+  .flechitas-abajo {
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 10px;
+    color: var(--color-secundario); /* o el color que uses para detalles */
+    animation: saltar 1.5s infinite;
+    line-height: 1.2;
+  }
+  
+  @keyframes saltar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+  }
+  
+
+
+
   /* 🔘 BOTONES GENERALES */
   button,
   .boton-confirmar,
   .boton-direccion,
   .boton-enviar {
-    background-color: var(--color-principal);
+    background-color: var(--color-detalle-terracota);
     color: white;
     padding: 12px 24px;
     border: none;
@@ -136,6 +157,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
   
+  
   /* 💬 BOTÓN WHATSAPP */
   .boton-whatsapp {
     position: fixed;
@@ -157,12 +179,13 @@
   }
 
   .texto-bienvenida {
-    color: #d99a6c; /* tono crema claro o el que quieras */
-    font-size: 18px;
+    color: var(--color-acento); /* tono crema claro o el que quieras */
+    font-size: 16px;
+    font-weight: 700;
   }
   
   .destacado-cancion {
-    color: #ffd4b1; /* color pastel cálido para destacar */
+    color: var(--color-secundario); 
     font-weight: 700;
   }
   
@@ -210,16 +233,23 @@
     color: rgba(255, 255, 255, 0.9);;
     font-size: 16px;
     text-align: center;
+    text-shadow: #000000;
   }
   
   .contador-circular span {
     font-size: 44px;
     display: block;
+    font-family: 'Playfair Display', serif;
+    color: var(--color-fondo);
+
   }
   
   .contador-circular small {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.9);;
+    color: var(--color-hover);;
+    text-shadow: #000000;
+    font-family: 'Playfair Display', serif;
+
   }
   
   /* 💿 DISCO GIRANDO */
@@ -446,7 +476,7 @@
   
 
   .info-celebracion {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 80px;
     padding: 40px 20px;
     margin: 40px auto;
@@ -456,24 +486,36 @@
   }
 
 
+  @media (max-width: 768px) {
+    .boton-musica {
+      display: flex !important;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
   
-
-
-
-  /* === SOBRE === */
-  .sobre-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    z-index: 10;
-    background: url('imagenes/fondo-floral.jpg') center center no-repeat;
-    background-size: cover;
-    background-position: center;
+    .footer-invitacion {
+      display: block !important;
+    }
   }
   
+
+
+
+/* === SOBRE === */
+/*
+.sobre-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 10;
+  background: url('imagenes/fondo-floral.jpg') center center no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 .sobre {
   width: 300px;
@@ -489,12 +531,10 @@
   100% { transform: rotate(0deg); }
 }
 
-/* Oculta contenido al inicio */
 body:not(.abierto) .contenido {
   display: none;
 }
 
-/* Fondo oscuro al abrir */
 .overlay {
   position: fixed;
   inset: 0;
@@ -511,6 +551,11 @@ body.abierto .overlay {
 body:not(.abierto) .footer-invitacion {
   display: none;
 }
+*/
+
+
+
+
 
 
 
