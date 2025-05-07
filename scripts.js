@@ -17,18 +17,25 @@ document.addEventListener("DOMContentLoaded", () => {
   
     musica.volume = 0.5;
   
-    document.body.addEventListener(
-      "click",
-      () => {
-        if (musica.paused) {
-          musica.play().catch(() => {
-            console.log("El navegador bloqueó la reproducción automática.");
-          });
-        }
-      },
-      { once: true }
-    );
+    // INTENTAR reproducir directamente
+    musica.play().then(() => {
+      console.log("✅ Música reproducida automáticamente");
+    }).catch(() => {
+      console.warn("⚠️ Autoplay bloqueado, esperando interacción");
   
+      // Backup: al primer clic en cualquier parte del body, se reproduce
+      document.body.addEventListener(
+        "click",
+        () => {
+          musica.play().catch(() => {
+            console.log("⚠️ Aún no se puede reproducir música.");
+          });
+        },
+        { once: true }
+      );
+    });
+  
+    // Botón toggle manual
     boton.addEventListener("click", () => {
       if (musica.paused) {
         musica.play();
@@ -41,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  
   
   // ⏳ Contador regresivo al 15 de junio de 2025, 17:00
   function iniciarContadorRegresivo() {
@@ -150,22 +158,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const sobre = document.getElementById("sobre");
-    const container = document.getElementById("sobreContainer");
-    const contenido = document.getElementById("contenido");
-    const audio = document.getElementById("audioSobre");
-  
-    if (sobre) {
-      sobre.addEventListener("click", () => {
-        // Reproduce sonido mágico
-        audio.play().catch((e) => console.log("Error al reproducir audio", e));
-  
-        // Oculta el sobre y muestra el contenido
-        document.body.classList.add("abierto");
-        container.style.display = "none";
-        contenido.style.display = "block";
-      });
-    }
-  });
-  
+  /*
+document.addEventListener("DOMContentLoaded", () => {
+  const sobre = document.getElementById("sobre");
+  const container = document.getElementById("sobreContainer");
+  const contenido = document.getElementById("contenido");
+  const audio = document.getElementById("audioSobre");
+
+  if (sobre) {
+    sobre.addEventListener("click", () => {
+      // Reproduce sonido mágico
+      audio.play().catch((e) => console.log("Error al reproducir audio", e));
+
+      // Oculta el sobre y muestra el contenido
+      document.body.classList.add("abierto");
+      container.style.display = "none";
+      contenido.style.display = "block";
+    });
+  }
+});
+*/
