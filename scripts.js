@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
   
       // Reemplazá con tu número real de WhatsApp si es necesario
-      const numero = "59892992182";
+      const numero = "+5491155789216";
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
       window.open(url, "_blank");
   
